@@ -1,0 +1,680 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0f0c29,
+      #302b63,
+      #24243e
+    );
+
+  font-family: Arial, sans-serif;
+
+  color: white;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 20px;
+
+  overflow-x: hidden;
+}
+
+body.light {
+
+  background:
+    linear-gradient(
+      135deg,
+      #0aa851,
+      #c3cfe2
+    );
+
+  color: black;
+}
+
+
+
+#intro-screen {
+
+  position: fixed;
+
+  inset: 0;
+
+  background: black;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 9999;
+
+  animation:
+    hideIntro 3s forwards;
+}
+
+.intro-title {
+
+  font-size: 3rem;
+
+  color: gold;
+
+  text-align: center;
+
+  padding: 20px;
+
+  animation:
+    zoom 1s infinite alternate;
+}
+
+@keyframes zoom {
+
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes hideIntro {
+
+  100% {
+
+    opacity: 0;
+
+    visibility: hidden;
+  }
+}
+
+
+
+.stars {
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    url("https://www.transparenttextures.com/patterns/stardust.png");
+
+  animation:
+    moveStars 20s linear infinite;
+
+  z-index: -1;
+}
+
+@keyframes moveStars {
+
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 1000px 1000px;
+  }
+}
+
+
+
+.container {
+
+  width: 100%;
+
+  max-width: 900px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(12px);
+
+  border-radius: 25px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  box-shadow:
+    0 0 25px rgba(0,0,0,0.4);
+}
+
+h1 {
+
+  margin-bottom: 20px;
+}
+
+
+
+.profile-section {
+
+  margin-bottom: 20px;
+}
+
+#user-profile {
+
+  width: 100px;
+
+  height: 100px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 4px solid gold;
+
+  box-shadow:
+    0 0 20px gold;
+}
+
+#email-status {
+
+  margin-bottom: 20px;
+
+  color: #00ff99;
+
+  font-size: 1rem;
+}
+
+
+
+.avatar-selection,
+.difficulty-box,
+.shop,
+.badges,
+.stats-box,
+.leaderboard {
+
+  margin-bottom: 25px;
+}
+
+.avatars {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 10px;
+
+  flex-wrap: wrap;
+}
+
+.avatar-btn {
+
+  width: 70px;
+
+  height: 70px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  font-size: 2rem;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.avatar-btn:hover {
+
+  transform: scale(1.1);
+}
+
+
+.score-board {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+
+  margin: 20px 0;
+}
+
+.card {
+
+  background:
+    rgba(255,255,255,0.1);
+
+  padding: 20px;
+
+  border-radius: 20px;
+
+  width: 200px;
+}
+
+.card p {
+
+  font-size: 2rem;
+
+  margin-top: 10px;
+}
+
+
+
+.streak-box {
+
+  color: gold;
+
+  font-size: 1.3rem;
+
+  margin-bottom: 20px;
+}
+
+
+
+.battle-area {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 25px;
+
+  flex-wrap: wrap;
+
+  margin: 30px 0;
+}
+
+.player {
+
+  background:
+    rgba(255,255,255,0.08);
+
+  padding: 20px;
+
+  border-radius: 20px;
+
+  width: 180px;
+}
+
+.choice {
+
+  font-size: 5rem;
+
+  margin-top: 10px;
+}
+
+.reaction {
+
+  font-size: 2rem;
+
+  margin-top: 10px;
+}
+
+.countdown {
+
+  font-size: 2rem;
+
+  color: gold;
+
+  font-weight: bold;
+}
+
+
+
+.buttons {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 20px;
+}
+
+.btn {
+
+  width: 90px;
+
+  height: 90px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  font-size: 2.5rem;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.btn:hover {
+
+  transform: scale(1.1);
+}
+
+.rock {
+  background: #ff4b2b;
+}
+
+.paper {
+  background: #00c6ff;
+}
+
+.scissors {
+  background: #8e2de2;
+}
+
+.fire {
+  background: orange;
+}
+
+.water {
+  background: #0077ff;
+}
+
+.lightning {
+  background: gold;
+}
+
+
+
+#result {
+
+  margin: 20px 0;
+
+  font-size: 2rem;
+}
+
+
+
+button,
+select {
+
+  padding: 12px 20px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+}
+
+#theme-toggle {
+
+  position: fixed;
+
+  top: 20px;
+
+  right: 20px;
+
+  z-index: 1000;
+}
+
+#logout-btn {
+
+  background: crimson;
+
+  color: white;
+
+  margin-bottom: 15px;
+}
+
+
+
+.win-animation {
+
+  animation:
+    pulse 0.5s infinite alternate;
+}
+
+@keyframes pulse {
+
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.15);
+  }
+}
+
+
+
+.auth-container {
+
+  width: 100%;
+
+  max-width: 400px;
+
+  background:
+    rgba(255,255,255,0.08);
+
+  padding: 30px;
+
+  border-radius: 20px;
+
+  backdrop-filter: blur(10px);
+
+  text-align: center;
+
+  box-shadow:
+    0 0 25px rgba(0,0,0,0.4);
+}
+
+.auth-container h1 {
+
+  margin-bottom: 20px;
+}
+
+.auth-container input {
+
+  width: 100%;
+
+  padding: 14px;
+
+  margin-bottom: 15px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  outline: none;
+}
+
+.auth-container button {
+
+  width: 100%;
+
+  padding: 14px;
+
+  background: gold;
+
+  border: none;
+
+  border-radius: 12px;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+}
+
+.auth-container a {
+
+  color: gold;
+
+  text-decoration: none;
+}
+
+
+
+@media (max-width: 768px) {
+
+  body {
+
+    padding: 10px;
+  }
+
+  .container {
+
+    padding: 20px;
+  }
+
+  h1 {
+
+    font-size: 2rem;
+  }
+
+  .intro-title {
+
+    font-size: 2rem;
+  }
+
+  .score-board {
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .card {
+
+    width: 100%;
+  }
+
+  .battle-area {
+
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  .player {
+
+    width: 100%;
+  }
+
+  .buttons {
+
+    gap: 10px;
+  }
+
+  .btn {
+
+    width: 75px;
+
+    height: 75px;
+
+    font-size: 2rem;
+  }
+
+  .choice {
+
+    font-size: 4rem;
+  }
+
+  #result {
+
+    font-size: 1.5rem;
+  }
+
+  .countdown {
+
+    font-size: 1.5rem;
+  }
+
+  #theme-toggle {
+
+    top: 10px;
+
+    right: 10px;
+
+    padding: 10px;
+  }
+
+  #user-profile {
+
+    width: 80px;
+
+    height: 80px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  h1 {
+
+    font-size: 1.6rem;
+  }
+
+  .intro-title {
+
+    font-size: 1.5rem;
+  }
+
+  .btn {
+
+    width: 65px;
+
+    height: 65px;
+
+    font-size: 1.6rem;
+  }
+
+  .choice {
+
+    font-size: 3rem;
+  }
+
+  .reaction {
+
+    font-size: 1.5rem;
+  }
+
+  .countdown {
+
+    font-size: 1.2rem;
+  }
+
+  .card p {
+
+    font-size: 1.5rem;
+  }
+
+  .streak-box {
+
+    font-size: 1rem;
+  }
+
+  #result {
+
+    font-size: 1.2rem;
+  }
+
+  button,
+  select {
+
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0" />
+
+  <title>Ultimate Rock Paper Scissors</title>
+
+  <link rel="stylesheet"
+    href="style.css">
+
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+</head>
+
+<body>
+
+  
+
+  <div id="intro-screen">
+
+    <h1 class="intro-title">
+
+      🔥 ROCK ⚔️ PAPER ⚔️ SCISSORS 🔥
+
+    </h1>
+
+  </div>
+
+  
+
+  <div class="stars"></div>
+
+
+  <button id="theme-toggle">
+
+    🌙
+
+  </button>
+
+  
+
+  <div class="container">
+
+    
+
+    <h1>
+
+      🔥 Ultimate Battle Game 🔥
+
+    </h1>
+
+   
+
+    <div class="profile-section">
+
+      <img id="user-profile"
+        src=""
+        alt="Profile">
+
+    </div>
+
+    
+
+    <h3 id="email-status">
+
+      📧 Email Not Verified
+
+    </h3>
+
+    
+
+    <div class="avatar-selection">
+
+      <h2>Select Avatar</h2>
+
+      <div class="avatars">
+
+        <button class="avatar-btn"
+          data-avatar="🥷">
+
+          🥷
+
+        </button>
+
+        <button class="avatar-btn"
+          data-avatar="🤖">
+
+          🤖
+
+        </button>
+
+        <button class="avatar-btn"
+          data-avatar="☠️">
+
+          ☠️
+
+        </button>
+
+        <button class="avatar-btn"
+          data-avatar="🐉">
+
+          🐉
+
+        </button>
+
+      </div>
+
+    </div>
+
+    
+
+    <div class="difficulty-box">
+
+      <label>
+
+        Difficulty:
+
+      </label>
+
+      <select id="difficulty">
+
+        <option value="easy">
+
+          🟢 Easy
+
+        </option>
+
+        <option value="medium">
+
+          🟡 Medium
+
+        </option>
+
+        <option value="hard">
+
+          🔴 Hard
+
+        </option>
+
+      </select>
+
+    </div>
+
+   
+
+    <button id="mode-btn">
+
+      🎮 Multiplayer OFF
+
+    </button>
+
+    
+
+    <div class="score-board">
+
+     
+
+      <div class="card">
+
+        <h2 id="player-name">
+
+          👩 You
+
+        </h2>
+
+        <p id="user-score">
+
+          0
+
+        </p>
+
+      </div>
+
+      
+
+      <div class="card">
+
+        <h2>
+
+          🤖 Computer
+
+        </h2>
+
+        <p id="computer-score">
+
+          0
+
+        </p>
+
+      </div>
+
+    </div>
+
+   
+
+    <h2>
+
+      💰 Coins:
+      <span id="coins">
+
+        0
+
+      </span>
+
+    </h2>
+
+    
+
+    <div class="streak-box">
+
+      🔥 Win Streak:
+
+      <span id="streak">
+
+        0
+
+      </span>
+
+    </div>
+
+    
+
+    <div class="stats-box">
+
+      <h2>
+
+        📊 Statistics
+
+      </h2>
+
+      <p>
+
+        Total Matches:
+        <span id="total-matches">
+
+          0
+
+        </span>
+
+      </p>
+
+      <p>
+
+        Wins:
+        <span id="wins">
+
+          0
+
+        </span>
+
+      </p>
+
+      <p>
+
+        Losses:
+        <span id="losses">
+
+          0
+
+        </span>
+
+      </p>
+
+      <p>
+
+        Draws:
+        <span id="draws">
+
+          0
+
+        </span>
+
+      </p>
+
+    </div>
+
+    
+
+    <div class="leaderboard">
+
+      <h2>
+
+        🏆 High Score
+
+      </h2>
+
+      <p id="high-score">
+
+        0
+
+      </p>
+
+    </div>
+
+    
+
+    <div class="battle-area">
+
+     
+
+      <div class="player">
+
+        <h3>
+
+          You
+
+        </h3>
+
+        <div id="user-choice"
+          class="choice">
+
+          ❔
+
+        </div>
+
+        <p id="user-reaction"
+          class="reaction">
+
+          😐
+
+        </p>
+
+      </div>
+
+      
+
+      <div id="countdown"
+        class="countdown">
+
+        READY?
+
+      </div>
+
+      
+
+      <div class="player">
+
+        <h3>
+
+          Computer
+
+        </h3>
+
+        <div id="computer-choice"
+          class="choice">
+
+          ❔
+
+        </div>
+
+        <p id="computer-reaction"
+          class="reaction">
+
+          😐
+
+        </p>
+
+      </div>
+
+    </div>
+
+    
+
+    <div class="buttons">
+
+      <button class="btn rock"
+        data-choice="rock">
+
+        🪨
+
+      </button>
+
+      <button class="btn paper"
+        data-choice="paper">
+
+        📄
+
+      </button>
+
+      <button class="btn scissors"
+        data-choice="scissors">
+
+        ✂️
+
+      </button>
+
+      <button class="btn fire"
+        data-choice="fire">
+
+        🔥
+
+      </button>
+
+      <button class="btn water"
+        data-choice="water">
+
+        🌊
+
+      </button>
+
+      <button class="btn lightning"
+        data-choice="lightning">
+
+        ⚡
+
+      </button>
+
+    </div>
+
+    
+
+    <h2 id="result">
+
+      Choose Your Weapon ⚔️
+
+    </h2>
+
+    
+
+    <div class="shop">
+
+      <h2>
+
+        🛒 Shop
+
+      </h2>
+
+      <button id="buy-theme">
+
+        Buy Golden Theme
+        - 50 Coins
+
+      </button>
+
+    </div>
+
+    
+
+    <div class="badges">
+
+      <h2>
+
+        🏅 Achievements
+
+      </h2>
+
+      <div id="badge-list"></div>
+
+    </div>
+
+    
+
+    <button id="logout-btn">
+
+      🚪 Logout
+
+    </button>
+
+   
+
+    <button id="reset-btn">
+
+      🔄 Reset Game
+
+    </button>
+
+  </div>
+
+ 
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
